@@ -1,0 +1,4 @@
+# Hugging Face API Token
+# Get your token from: https://huggingface.co/settings/tokens
+# Copy this file to .env and replace with your actual token
+HUGGINGFACE_API_TOKEN=your_huggingface_token_here
