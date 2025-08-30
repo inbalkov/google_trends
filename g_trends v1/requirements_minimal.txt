@@ -1,0 +1,28 @@
+# Essential dependencies for Keyword Trend Explorer - OpenAI Version
+# Core app framework
+streamlit>=1.48.0
+
+# Data handling
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Google Trends API
+pytrends>=4.9.0
+
+# OpenAI API
+openai>=1.100.0
+
+# Data visualization
+altair>=5.5.0
+
+# Environment variables
+python-dotenv>=1.1.0
+
+# HTTP requests (dependency for pytrends)
+requests>=2.32.0
+
+# Date/time handling
+python-dateutil>=2.9.0
+
+# Country code to name conversion
+pycountry>=24.6.0
