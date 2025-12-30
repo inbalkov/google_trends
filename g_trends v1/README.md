@@ -30,8 +30,11 @@ pip install streamlit pandas pytrends python-dotenv altair openai
 ### API Key
 You'll need an OpenAI API key to generate explanations:
 1. Get your API key from [OpenAI's website](https://platform.openai.com/api-keys)
-2. Set it as an environment variable: `OPENAI_API_KEY=your_key_here`
-3. Or enter it directly in the app's sidebar
+2. Copy `env_template.txt` to `.env` and add your key (recommended)
+3. Or set it as an environment variable: `export OPENAI_API_KEY=your_key_here`
+4. Or enter it directly in the app's sidebar
+
+**Security Note**: The `.env` file is automatically ignored by git and will never be committed.
 
 ## Installation & Setup
 
@@ -44,15 +47,18 @@ You'll need an OpenAI API key to generate explanations:
 
 3. **Set up your OpenAI API key** (choose one method):
    
-   **Option A: Environment Variable**
+   **Option A: .env file (Recommended)**
    ```bash
-   export OPENAI_API_KEY="your_openai_api_key_here"
+   # Copy the template file
+   cp env_template.txt .env
+   
+   # Edit .env and replace 'your_openai_api_key_here' with your actual API key
+   # The .env file is already in .gitignore and will not be committed to git
    ```
    
-   **Option B: .env file**
+   **Option B: Environment Variable**
    ```bash
-   # Create a .env file in the same directory
-   echo "OPENAI_API_KEY=your_openai_api_key_here" > .env
+   export OPENAI_API_KEY="your_openai_api_key_here"
    ```
    
    **Option C: Enter in the app**
@@ -136,13 +142,38 @@ You'll need an OpenAI API key to generate explanations:
 ### Demo Mode
 If no API key is provided, the app runs in demo mode with placeholder explanations.
 
+## Security
+
+### API Key Protection
+This repository is configured to prevent accidental API key leaks:
+
+- **`.env` file is in `.gitignore`**: Your `.env` file will never be committed to git
+- **Template file**: Use `env_template.txt` as a safe starting point
+- **No hardcoded keys**: All API keys are read from environment variables
+- **Enhanced `.gitignore`**: Protects against common credential file patterns
+
+### Best Practices
+1. **Never commit your `.env` file** - It's already in `.gitignore`, but double-check before committing
+2. **Use the template**: Copy `env_template.txt` to `.env` and fill in your keys
+3. **Rotate keys if exposed**: If you accidentally commit a key, rotate it immediately
+4. **Review before pushing**: Always check `git status` to ensure no sensitive files are staged
+
+### Verifying Your Setup
+To verify your `.env` file is not tracked:
+```bash
+git status
+# .env should NOT appear in the output
+```
+
 ## File Structure
 ```
 g_trends v1/
 ├── app_openai.py          # Main OpenAI-powered application
 ├── app.py                 # Original Hugging Face version
-├── README_openai.md       # This file
-└── .env                   # Your API keys (create this file)
+├── env_template.txt       # Template for .env file (safe to commit)
+├── .env                   # Your API keys (create from template, NOT committed)
+├── .gitignore             # Ensures .env and other secrets are never committed
+└── README.md              # This file
 ```
 
 ## Differences from Original Version
