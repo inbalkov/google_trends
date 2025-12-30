@@ -23,6 +23,8 @@ HUGGINGFACE_API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN")
 
 
 # Streamlit page config
+# This line sets the Streamlit app's page configuration, such as the title and layout.
+# It should be called at the very start of the script, before any Streamlit components are rendered.
 st.set_page_config(page_title=APP_TITLE, layout="centered")
 
 # -----------------------------
