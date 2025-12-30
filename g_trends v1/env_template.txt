@@ -1,0 +1,12 @@
+# Environment Variables Template
+# Copy this file to .env and fill in your actual API keys
+# DO NOT commit .env to git - it's already in .gitignore
+
+# OpenAI API Key (for app_openai.py)
+# Get your key from: https://platform.openai.com/api-keys
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Hugging Face API Token (for app.py - optional)
+# Get your token from: https://huggingface.co/settings/tokens
+# HUGGINGFACE_API_TOKEN=your_huggingface_token_here
+

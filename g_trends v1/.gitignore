@@ -1,7 +1,15 @@
-# Environment variables
+# Environment variables and API keys
 .env
 .env.local
 .env.*.local
+*.env
+*.key
+*.token
+*secret*
+*password*
+config.ini
+secrets.json
+credentials.json
 
 # Python
 __pycache__/
